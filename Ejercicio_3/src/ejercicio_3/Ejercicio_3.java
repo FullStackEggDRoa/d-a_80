@@ -22,6 +22,7 @@ public class Ejercicio_3 {
         // TODO code application logic here
         serviciosLavadora sL = new serviciosLavadora();
         serviciosTelevisor sT = new serviciosTelevisor();
+        float sumatoria=0;
         
         ArrayList <Electrodomestico> electrodomesticos = new ArrayList<>();
         
@@ -33,12 +34,15 @@ public class Ejercicio_3 {
         electrodomesticos.add(sT.crearTelevisor());
         System.out.println("Televisor Phillips");
         electrodomesticos.add(sT.crearTelevisor());        
-        
+        System.out.println("");
         System.out.println("..:: PRECIOS FINALES ::..");
         for(Electrodomestico aux: electrodomesticos){
             aux.precioFinal();
             System.out.println("Precio Final "+aux.getClass().getName().replace("Entidades.", "")+" "+String.format("%.2f",aux.getPrecio())+" USD");
+            sumatoria+=aux.getPrecio();
         }
+        System.out.println("");
+        System.out.println("SUMA TOTAL - Precios Electrodomésticos: "+String.format("%.2f",sumatoria)+" USD");
         
     }
     
